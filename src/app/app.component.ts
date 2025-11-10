@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { SideMenuComponent } from './shared/components/side-menu.component';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule, RouterModule, SideMenuComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-crud-jvs';
+  constructor(public authService: AuthService, public router: Router) {}
+
+  get showMenu(): boolean {
+    return this.authService.isAuthenticated() && this.router.url !== '/login';
+  }
 }

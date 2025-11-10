@@ -1,0 +1,27 @@
+<nav class="side-menu">
+  <div class="menu-header">
+    <h3>CRUD Usuarios</h3>
+  </div>
+
+  <ul class="menu-list">
+    <li>
+      <a routerLink="/users" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+        <span class="icon">👥</span>
+        <span>Usuarios</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/users/create" routerLinkActive="active">
+        <span class="icon">➕</span>
+        <span>Nuevo Usuario</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="menu-footer">
+    <button class="btn-logout" (click)="logout()">
+      <span class="icon">🚪</span>
+      <span>Cerrar Sesión</span>
+    </button>
+  </div>
+</nav>

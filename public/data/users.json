@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ana García",
+      "email": "ana.garcia@email.com",
+      "age": 28,
+      "isActive": true,
+      "username": "ana",
+      "password": "ana",
+      "role": "ADMIN",
+      "createdAt": "2024-01-15T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Carlos López",
+      "email": "carlos.lopez@email.com",
+      "age": 32,
+      "isActive": true,
+      "username": "carlos",
+      "password": "carlos",
+      "role": "USER",
+      "createdAt": "2024-02-20T14:15:00Z"
+    },
+    {
+      "id": 3,
+      "name": "María Rodríguez",
+      "email": "maria.rodriguez@email.com",
+      "age": 25,
+      "isActive": false,
+      "username": "maria",
+      "password": "maria",
+      "role": "MODERATOR",
+      "createdAt": "2024-03-10T09:45:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Pedro Sánchez",
+      "email": "pedro@email.com",
+      "age": 40,
+      "isActive": true,
+      "username": "pedro",
+      "password": "pedro",
+      "role": "GUEST",
+      "createdAt": "2024-01-20T08:00:00Z"
+    }
+  ]
+}

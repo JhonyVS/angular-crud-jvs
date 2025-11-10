@@ -1,0 +1,46 @@
+<div class="user-list-container">
+  <div class="header">
+    <h2>Gestión de Usuarios</h2>
+    <button class="btn-primary" routerLink="/users/create">
+      <span>➕</span> Nuevo Usuario
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Cargando usuarios...</div>
+
+  <div *ngIf="!loading" class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Usuario</th>
+          <th>Edad</th>
+          <th>Rol</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.age }}</td>
+          <td><span class="badge badge-role">{{ user.role }}</span></td>
+          <td>
+            <span class="badge" [class.badge-active]="user.isActive" [class.badge-inactive]="!user.isActive">
+              {{ user.isActive ? 'Activo' : 'Inactivo' }}
+            </span>
+          </td>
+          <td class="actions">
+            <button class="btn-edit" (click)="editUser(user.id)">Editar</button>
+            <button class="btn-delete" (click)="deleteUser(user.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
